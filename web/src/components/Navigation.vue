@@ -238,7 +238,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from "vue-router/composables";
+import { useRoute } from "vue-router";
 import {
   setColorScheme,
   getColorSchemeFromStorage,

@@ -85,7 +85,7 @@ import { computed, nextTick, ref, onMounted, watch } from "vue";
 import { EventBus } from "./EventBus";
 import { useRootStore } from "@/stores";
 import { GraphType, useGraphStore } from "@/stores/graph";
-import { useRoute, useRouter } from "vue-router/composables";
+import { useRoute, useRouter } from "vue-router";
 import {
   default as VueApexCharts,
   VueApexChartsComponent,

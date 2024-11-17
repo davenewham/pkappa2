@@ -351,7 +351,7 @@ import {
   onMounted,
   watch,
 } from "vue";
-import { useRoute, useRouter } from "vue-router/composables";
+import { useRoute, useRouter } from "vue-router";
 import StreamData from "./StreamData.vue";
 import ToolBar from "./ToolBar.vue";
 import {

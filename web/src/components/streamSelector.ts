@@ -1,12 +1,12 @@
 import ListenerBag from "./listenerBag";
 import { useStreamStore } from "@/stores/stream";
-import Vue, { Ref } from "vue";
+import { ComponentPublicInstance, Ref } from "vue";
 import { Data } from "@/apiClient";
 
 const listenerBag = new ListenerBag();
 
 type ThisProxy = {
-  proxy: Vue;
+  proxy: ComponentPublicInstance;
   selectionData: Ref<string>;
   selectionQuery: Ref<string>;
 };
@@ -89,15 +89,17 @@ function onSelectionChange(this: ThisProxy) {
     return;
   }
 
-  const streamData = this.proxy.$refs.streamData;
-  if (
-    streamData instanceof Element ||
-    Array.isArray(streamData) ||
-    streamData == null
-  ) {
+  const streamData = this.proxy.$refs.streamData as ComponentPublicInstance<{
+    $el: HTMLElement;
+  }> | null;
+  if (!streamData || !(streamData.$el instanceof HTMLElement)) {
+    // TODO: assert this is the correct type
+    console.error("FIXME: Dave got this type wrong!");
     return;
   }
+
   const streamDataNode = streamData.$el;
+
   // Do not support multi-range selection
   if (selection.rangeCount !== 1 || streamDataNode == null) {
     return;

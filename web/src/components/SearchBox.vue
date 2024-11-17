@@ -107,7 +107,7 @@ import {
   onBeforeUnmount,
   watch,
 } from "vue";
-import { useRoute, useRouter } from "vue-router/composables";
+import { useRoute, useRouter } from "vue-router";
 import { useRootStore } from "@/stores";
 import { tagNameForURI } from "@/filters";
 import { VTextField } from "vuetify/lib";

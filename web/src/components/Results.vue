@@ -296,7 +296,7 @@ import { useRootStore } from "@/stores";
 import { useStreamsStore } from "@/stores/streams";
 import { computed, onMounted, onBeforeUnmount, ref, watch } from "vue";
 import { RouterLink } from "vue-router";
-import { useRoute, useRouter } from "vue-router/composables";
+import { useRoute, useRouter } from "vue-router";
 import { Result } from "@/apiClient";
 import { capitalize, formatDate, formatDateLong, tagify } from "@/filters";
 import prettyBytes from "pretty-bytes";
