@@ -3774,10 +3774,10 @@ __metadata:
     vite: "npm:^5.4.10"
     vite-plugin-checker: "npm:^0.8.0"
     vite-plugin-node-polyfills: "npm:^0.22.0"
-    vue: "npm:^2.7.14"
+    vue: "npm:^2.7.16"
     vue-apexcharts: "git+https://github.com/apexcharts/vue-apexcharts#c4b6de32b0659a46d610e4f457afb8ede0493fef"
     vue-router: "npm:^3.6.5"
-    vuetify: "npm:^2.6.14"
+    vuetify: "npm:^2.7.2"
   languageName: unknown
   linkType: soft
 
@@ -5016,7 +5016,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^2.7.14":
+"vue@npm:^2.7.16":
   version: 2.7.16
   resolution: "vue@npm:2.7.16"
   dependencies:
@@ -5026,7 +5026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuetify@npm:^2.6.14":
+"vuetify@npm:^2.7.2":
   version: 2.7.2
   resolution: "vuetify@npm:2.7.2"
   peerDependencies:
