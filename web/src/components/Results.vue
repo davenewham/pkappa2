@@ -249,11 +249,10 @@
               </td>
               <td>
                 <span :title="`${stream.Stream.Client.Bytes} Bytes`">{{
-                  $options.filters?.prettyBytes(
-                    stream.Stream.Client.Bytes,
-                    1,
-                    true,
-                  )
+                  prettyBytes(stream.Stream.Client.Bytes, {
+                    minimumFractionDigits: 1,
+                    binary: true,
+                  })
                 }}</span>
               </td>
               <td>
@@ -261,11 +260,10 @@
               </td>
               <td>
                 <span :title="`${stream.Stream.Server.Bytes} Bytes`">{{
-                  $options.filters?.prettyBytes(
-                    stream.Stream.Server.Bytes,
-                    1,
-                    true,
-                  )
+                  prettyBytes(stream.Stream.Server.Bytes, {
+                    minimumFractionDigits: 1,
+                    binary: true,
+                  })
                 }}</span>
               </td>
               <td
@@ -301,6 +299,7 @@ import { RouterLink } from "vue-router";
 import { useRoute, useRouter } from "vue-router/composables";
 import { Result } from "@/apiClient";
 import { capitalize, formatDate, formatDateLong, tagify } from "@/filters";
+import prettyBytes from "pretty-bytes";
 
 const store = useRootStore();
 const route = useRoute();
