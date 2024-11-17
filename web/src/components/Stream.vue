@@ -149,7 +149,7 @@
             dense
             v-bind="attrs"
             :items="selectableConverters"
-            :modelValue="activeConverter"
+            :model-value="activeConverter"
             v-on="on"
             @change="changeConverter"
           />

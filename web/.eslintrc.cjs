@@ -9,7 +9,7 @@ module.exports = {
   extends: [
     // add more generic rulesets here, such as:
     "eslint:recommended",
-    "plugin:vue/recommended",
+    "plugin:vue/vue3-recommended",
     "prettier",
   ],
   rules: {
@@ -46,6 +46,7 @@ module.exports = {
         "vue/multi-word-component-names": "off",
         "vue/no-reserved-component-names": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
       },
     },
   ],

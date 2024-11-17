@@ -26,7 +26,7 @@
       :key="tagType.key"
       link
       dense
-      :modelValue="true"
+      :model-value="true"
       sub-group
     >
       <template #activator>
@@ -37,12 +37,8 @@
           <v-list-item-title>{{ tagType.title }}</v-list-item-title>
         </v-list-item-content>
       </template>
-      <template v-for="tag in groupedTags[tagType.key]">
-        <v-hover
-          v-slot="{ hover }"
-          :key="tag.Name"
-          :style="{ backgroundColor: tag.Color }"
-        >
+      <template v-for="tag in groupedTags[tagType.key]" :key="tag.Name">
+        <v-hover v-slot="{ hover }" :style="{ backgroundColor: tag.Color }">
           <v-list-item
             link
             dense

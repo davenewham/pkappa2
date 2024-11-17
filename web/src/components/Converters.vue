@@ -61,7 +61,7 @@
       </template>
     </v-data-table>
     <v-dialog
-      :modelValue="shownProcess !== null"
+      :model-value="shownProcess !== null"
       width="600px"
       @click:outside="shownProcess = null"
     >

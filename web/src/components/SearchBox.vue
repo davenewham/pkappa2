@@ -23,8 +23,8 @@
           hide-details
           flat
           prepend-inner-icon="mdi-magnify"
-          :modelValue="searchBox"
-          @update:modelValue="onInput"
+          :model-value="searchBox"
+          @update:model-value="onInput"
           @click.stop
           @keyup.enter="onEnter"
           @keydown.up.prevent="arrowUp"
@@ -46,7 +46,7 @@
     >
       <v-list>
         <v-list-item-group
-          :modelValue="suggestionSelectedIndex"
+          :model-value="suggestionSelectedIndex"
           color="primary"
           mandatory
         >
@@ -154,7 +154,7 @@ const queryTimeLimit = computed({
       searchBox.value = `${prefix}${infix}${suffix}`;
     }
     searchBoxField.value?.$el.querySelector("input")?.focus();
-    nextTick(() => {
+    void nextTick(() => {
       searchBoxOptionsMenuOpen.value = true;
     });
   },

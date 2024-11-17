@@ -22,11 +22,10 @@
           'PacketTimestampMax',
         ]"
         #[`item.${field}`]="{ index, value }"
-        ><span
-          :key="`${field}/${index}`"
-          :title="formatDateLong(new Date(value))"
-          >{{ formatDate(new Date(value)) }}</span
-        ></template
+        :key="`${field}/${index}`"
+        ><span :title="formatDateLong(new Date(value))">{{
+          formatDate(new Date(value))
+        }}</span></template
       >
       <template #[`item.Filesize`]="{ value }"
         ><span :title="`${value} Bytes`">{{
