@@ -76,14 +76,16 @@
                 props.item.LastDisconnected === 0
                   ? "Never connected"
                   : props.item.LastConnected > props.item.LastDisconnected
-                    ? `Connected since ${moment
+                    ? `Connected since ${dayjs
                         .duration(
-                          currentTime - props.item.LastConnected / 1_000_000,
+                          currentTime -
+                            props.item.LastConnected / 1_000_000,
                         )
                         .humanize()}`
-                    : `Disconnected since ${moment
+                    : `Disconnected since ${dayjs
                         .duration(
-                          currentTime - props.item.LastDisconnected / 1_000_000,
+                          currentTime -
+                            props.item.LastDisconnected / 1_000_000,
                         )
                         .humanize()}`
               }}
@@ -94,13 +96,13 @@
             {{
               props.item.LastConnected == 0
                 ? "never"
-                : moment(props.item.LastConnected / 1_000_000)
+                : dayjs(props.item.LastConnected / 1_000_000)
             }}
             / last disconnected:
             {{
               props.item.LastDisconnected == 0
                 ? "never"
-                : moment(props.item.LastDisconnected / 1_000_000)
+                : dayjs(props.item.LastDisconnected / 1_000_000)
             }}</span
           >
         </v-tooltip>
@@ -160,7 +162,7 @@ import { EventBus } from "./EventBus";
 import ToolBar from "./ToolBar.vue";
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useRootStore } from "@/stores";
-import moment from "moment";
+import dayjs from "dayjs";
 
 const delDialogVisible = ref(false);
 const delDialogAddress = ref("");
