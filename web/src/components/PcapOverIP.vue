@@ -78,14 +78,12 @@
                   : props.item.LastConnected > props.item.LastDisconnected
                     ? `Connected since ${dayjs
                         .duration(
-                          currentTime -
-                            props.item.LastConnected / 1_000_000,
+                          currentTime - props.item.LastConnected / 1_000_000,
                         )
                         .humanize()}`
                     : `Disconnected since ${dayjs
                         .duration(
-                          currentTime -
-                            props.item.LastDisconnected / 1_000_000,
+                          currentTime - props.item.LastDisconnected / 1_000_000,
                         )
                         .humanize()}`
               }}
