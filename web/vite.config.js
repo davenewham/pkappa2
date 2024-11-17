@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue2";
+import vue from "@vitejs/plugin-vue";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import Components from "unplugin-vue-components/vite";
 import { VuetifyResolver } from "unplugin-vue-components/resolvers";
@@ -10,7 +10,15 @@ import checker from "vite-plugin-checker";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          compatConfig: {
+            MODE: 2,
+          },
+        },
+      },
+    }),
     Components({
       resolvers: VuetifyResolver(),
       dts: true,
@@ -28,6 +36,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(path.dirname(fileURLToPath(import.meta.url)), "./src"),
+      vue: "@vue/compat",
     },
   },
   server: {
