@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  RouteLocationNormalized,
+} from "vue-router";
 
 import Base from "./components/Base.vue";
 import Converters from "./components/Converters.vue";
@@ -50,13 +54,15 @@ const routes = [
         path: "graph",
         name: "graph",
         component: Graph,
-        props: (route) => ({ searchTerm: route.query.q }),
+        props: (route: RouteLocationNormalized) => ({
+          searchTerm: route.query.q,
+        }),
       },
       {
         path: "search",
         name: "search",
         component: Results,
-        props: (route) => ({
+        props: (route: RouteLocationNormalized) => ({
           searchTerm: route.query.q,
           searchPage: route.query.p,
         }),
@@ -65,7 +71,7 @@ const routes = [
         path: "stream/:streamId(\\d+)",
         name: "stream",
         component: Stream,
-        props: (route) => ({
+        props: (route: RouteLocationNormalized) => ({
           searchTerm: route.query.q,
           searchPage: route.query.p,
         }),

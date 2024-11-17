@@ -21,7 +21,7 @@
             :key="converter.Name"
             v-model="checkedConverters"
             :label="converter.Name"
-            :value="converter.Name"
+            :modelValue="converter.Name"
             hide-details
           ></v-checkbox>
         </v-card-text>

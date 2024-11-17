@@ -276,7 +276,7 @@
                 <v-btn
                   :href="`/api/download/${stream.Stream.ID}.pcap`"
                   icon
-                  @click.native.stop
+                  @click.stop
                 >
                   <v-icon>mdi-download</v-icon>
                 </v-btn>

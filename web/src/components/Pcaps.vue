@@ -11,11 +11,7 @@
       dense
     >
       <template #[`item.download`]="{ item }"
-        ><v-btn
-          :href="`/api/download/pcap/${item.Filename}`"
-          icon
-          @click.native.stop
-        >
+        ><v-btn :href="`/api/download/pcap/${item.Filename}`" icon @click.stop>
           <v-icon>mdi-download</v-icon>
         </v-btn></template
       >

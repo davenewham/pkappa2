@@ -71,9 +71,8 @@
           </v-tooltip>
         </template>
         <v-list v-if="stream.stream !== null" dense>
-          <template v-for="tag of groupedTags.mark">
+          <template v-for="tag of groupedTags.mark" :key="tag.Name">
             <v-list-item
-              :key="tag.Name"
               link
               @click="
                 markStream(tag.Name, !stream.stream.Tags.includes(tag.Name))
@@ -150,7 +149,7 @@
             dense
             v-bind="attrs"
             :items="selectableConverters"
-            :value="activeConverter"
+            :modelValue="activeConverter"
             v-on="on"
             @change="changeConverter"
           />

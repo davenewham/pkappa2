@@ -23,8 +23,8 @@
           hide-details
           flat
           prepend-inner-icon="mdi-magnify"
-          :value="searchBox"
-          @input="onInput"
+          :modelValue="searchBox"
+          @update:modelValue="onInput"
           @click.stop
           @keyup.enter="onEnter"
           @keydown.up.prevent="arrowUp"
@@ -46,7 +46,7 @@
     >
       <v-list>
         <v-list-item-group
-          :value="suggestionSelectedIndex"
+          :modelValue="suggestionSelectedIndex"
           color="primary"
           mandatory
         >

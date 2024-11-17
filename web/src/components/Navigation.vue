@@ -26,7 +26,7 @@
       :key="tagType.key"
       link
       dense
-      :value="true"
+      :modelValue="true"
       sub-group
     >
       <template #activator>
